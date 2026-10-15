@@ -1,0 +1,53 @@
+{
+  "name": "clubsphere",
+  "version": "1.9.22",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "bash scripts/check-unicode-escapes.sh && tsc && vite build",
+    "build:native-shell": "tsc -p native-shell && vite build --config native-shell/vite.config.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/preferences": "^8.0.1",
+    "@sentry/react": "^11.3.0",
+    "@supabase/supabase-js": "^2.100.0",
+    "exceljs": "^4.4.0",
+    "fflate": "^0.8.3",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
+    "leaflet": "^1.9.4",
+    "libphonenumber-js": "^1.13.1",
+    "lucide-react": "^1.0.1",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.13.2",
+    "recharts": "^3.8.1",
+    "vite-plugin-pwa": "^1.3.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/leaflet": "^1.9.21",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-leaflet": "^2.8.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
+    "axios": "^1.13.6",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2"
+  }
+}

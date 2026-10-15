@@ -1,0 +1,2 @@
+[functions."resolve-activation"]
+verify_jwt = true

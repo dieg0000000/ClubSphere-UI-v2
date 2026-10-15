@@ -1,0 +1,25 @@
+{
+  "regions": ["fra1"],
+  "headers": [
+    {
+      "source": "/((?!assets/|api/|version\\.json|manifest-club\\.webmanifest|pwa-club-icon-).*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    },
+    {
+      "source": "/version.json",
+      "headers": [{ "key": "Cache-Control", "value": "no-store, max-age=0" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ],
+  "rewrites": [
+    { "source": "/manifest-club.webmanifest", "destination": "/api/pwa-manifest" },
+    { "source": "/pwa-club-icon-192.png", "destination": "/api/pwa-icon?size=192" },
+    { "source": "/pwa-club-icon-512.png", "destination": "/api/pwa-icon?size=512" },
+    { "source": "/pwa-club-icon-maskable-192.png", "destination": "/api/pwa-icon?size=192&maskable=1" },
+    { "source": "/pwa-club-icon-maskable-512.png", "destination": "/api/pwa-icon?size=512&maskable=1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

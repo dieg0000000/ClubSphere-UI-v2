@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#040D25" />
+    <title>ClubSphère</title>
+    <style>
+      :root {
+        --bg-app: #F8FAFC;
+        --bg-card: #FFFFFF;
+        --bg-hover: #F8FAFC;
+        --bg-header: #040D25;
+        --text-primary: #0F172A;
+        --text-secondary: #475569;
+        --text-muted: #607490;
+        --text-inverse: #FFFFFF;
+        --border-color: #E2E8F0;
+        --border-strong: #CBD5E1;
+        --accent: #3B82F6;
+        --accent-hover: #2563EB;
+        --accent-soft: #E0F2FE;
+        --danger-soft: #FDE8E8;
+        --danger-text: #9A0909;
+        --grad: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; }
+      body {
+        font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-app);
+        color: var(--text-primary);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+      [hidden] { display: none !important; }
+      .screen { min-height: 100%; display: flex; flex-direction: column; }
+      .header {
+        background: var(--bg-header);
+        padding: calc(env(safe-area-inset-top, 0px) + 40px) 24px 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .logo {
+        display: block;
+        height: 64px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .content {
+        flex: 1;
+        width: 100%;
+        max-width: 440px;
+        margin: -32px auto 0;
+        padding: 0 16px calc(env(safe-area-inset-bottom, 0px) + 32px);
+      }
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 24px;
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      }
+      h1 { font-size: 22px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+      .lead { font-size: 15px; color: var(--text-secondary); margin-bottom: 24px; }
+      label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px; }
+      input {
+        width: 100%;
+        height: 48px;
+        padding: 0 16px;
+        font: inherit;
+        font-size: 16px;
+        color: var(--text-primary);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+      .btn {
+        width: 100%;
+        height: 48px;
+        padding: 13px 24px;
+        font: inherit;
+        font-size: 15px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        line-height: 1;
+        text-decoration: none;
+        border: none;
+        transition: transform 0.15s ease, filter 0.15s ease, opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      }
+      .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+      .btn-primary { margin-top: 16px; background: var(--grad); color: var(--text-inverse); font-weight: 600; }
+      .btn-primary:not(:disabled):active { transform: translateY(1px); filter: brightness(1.08); }
+      .btn-secondary {
+        margin-top: 16px;
+        background: var(--bg-app);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        font-weight: 500;
+      }
+      .btn-secondary:active { background: var(--bg-hover); border-color: var(--border-strong); }
+      .spinner {
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-top-color: #FFFFFF;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .error {
+        margin-top: 16px;
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: var(--danger-soft);
+        color: var(--danger-text);
+        font-size: 14px;
+      }
+      input::placeholder { color: var(--text-muted); }
+      .hint { margin-top: 8px; font-size: 13px; color: var(--text-muted); }
+      .muted { margin-top: 24px; font-size: 13px; color: var(--text-muted); text-align: center; }
+    </style>
+    <script type="module" crossorigin src="./assets/index-rgBeOb3_.js"></script>
+  </head>
+  <body>
+    <main id="club-select" class="screen" hidden>
+      <div class="header">
+        <img id="logo" class="logo" alt="ClubSphère" />
+      </div>
+      <div class="content">
+        <form id="club-form" class="card" novalidate>
+          <h1>Bienvenue sur ClubSphère</h1>
+          <p class="lead">Entrez le numéro de votre club pour commencer.</p>
+          <label for="club-slug">Numéro du club</label>
+          <input
+            id="club-slug"
+            type="text"
+            inputmode="numeric"
+            placeholder="Ex. 9028"
+            autocapitalize="none"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            enterkeyhint="go"
+            aria-describedby="club-slug-hint"
+          />
+          <p id="club-slug-hint" class="hint">Numéro ASF de votre club, indiqué par le club.</p>
+          <button id="continue" type="submit" class="btn btn-primary" disabled>Continuer</button>
+          <div id="error" class="error" role="alert" hidden></div>
+          <a id="website" class="btn btn-secondary" href="https://clubsphere.ch" hidden>Aller sur clubsphere.ch</a>
+          <p class="muted">Vous n'avez pas de numéro de club ? Demandez-le à votre club.</p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

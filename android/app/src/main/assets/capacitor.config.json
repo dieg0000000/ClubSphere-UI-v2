@@ -1,0 +1,14 @@
+{
+	"appId": "cloud.clubsphere.app",
+	"appName": "ClubSphère",
+	"webDir": "native-shell/dist",
+	"appendUserAgent": "ClubSphereApp/1.0",
+	"server": {
+		"androidScheme": "https",
+		"allowNavigation": [
+			"*.clubsphere.cloud",
+			"clubsphere.cloud",
+			"*.test.clubsphere.cloud"
+		]
+	}
+}

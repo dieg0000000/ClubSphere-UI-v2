@@ -1,0 +1,1 @@
+ALTER TABLE matches ALTER COLUMN status SET DEFAULT 'planifié';

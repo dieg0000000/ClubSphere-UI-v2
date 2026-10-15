@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "497187875164",
+    "project_id": "clubsphere-d96d3",
+    "storage_bucket": "clubsphere-d96d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497187875164:android:2c19c8f5bff571a382f999",
+        "android_client_info": {
+          "package_name": "cloud.clubsphere.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyU7nRSuc4kxF0GuA6WNwSFfuc9RQM_qo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
